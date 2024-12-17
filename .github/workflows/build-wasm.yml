@@ -14,39 +14,44 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # 2. 安装 Rust 工具链
+    # 2. 列举项目结构
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
+
+    # 3. 安装 Rust 工具链
     - name: Install Rust
       uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: stable
         override: true
 
-    # 3. 安装 wasm-pack
+    # 4. 安装 wasm-pack
     - name: Install wasm-pack
       run: cargo install wasm-pack
 
-    # 4. 构建 Rust 项目为 WASM
+    # 5. 构建 Rust 项目为 WASM
     - name: Build with wasm-pack
       run: wasm-pack build --target web --out-dir ./wgpu_html/public/js --out-name wgpu-wasm
 
-    # 5. 设置 Node.js 环境
-    - name: Set up Node.js
+    # 6. 设置 Node.js 环境
+    - name: Setup Node.js
       working-directory: ./wgpu_html
       uses: actions/setup-node@v4
       with:
         node-version: 18
 
-    # 6. 安装 React 依赖
+    # 7. 安装 React 依赖
     - name: Install dependencies
       working-directory: ./wgpu_html
       run: npm install
 
-    # 7. 构建 React 项目
+    # 8. 构建 React 项目
     - name: Build React app
       working-directory: ./wgpu_html
       run: npm run build
 
-    # 8. 部署到 Github Pages
+    # 9. 部署到 Github Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
