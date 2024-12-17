@@ -1,0 +1,23 @@
+name: Deploy to Github Pages
+
+on:
+  workflow_run:
+    workflows: ["Build WGPU To WASM"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 下载 WASM 文件
+      - name: Download WASM Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: wasm-files
+          path: ./js
