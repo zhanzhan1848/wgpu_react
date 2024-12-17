@@ -1,0 +1,4 @@
+/target
+/pkg
+/wgpu_html/Dockerfile
+/wgpu_html/.dockerignore
