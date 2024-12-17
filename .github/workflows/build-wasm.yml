@@ -35,7 +35,7 @@ jobs:
       run: wasm-pack build --target web --out-dir ./wgpu_html/public/js --out-name wgpu-wasm
 
     # 6. 设置 Node.js 环境
-    - name: Setup Node.js
+    - name: Setup Nodejs
       working-directory: ./wgpu_html
       uses: actions/setup-node@v4
       with:
