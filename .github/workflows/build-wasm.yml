@@ -36,7 +36,6 @@ jobs:
 
     # 6. 设置 Node.js 环境
     - name: Setup Nodejs
-      working-directory: ./wgpu_html
       uses: actions/setup-node@v4
       with:
         node-version: 18
