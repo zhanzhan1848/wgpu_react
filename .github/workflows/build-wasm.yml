@@ -82,6 +82,8 @@ jobs:
         run: |
           echo "Artifact files:"
           ls ./js
+          echo "All files:"
+          ls
 
       # 7. 提交到 gh-pages
       - name: Commit and Push changes
