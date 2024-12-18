@@ -1,0 +1,15 @@
+{
+  "name": "render_engine",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "wgpu-wasm_bg.wasm",
+    "wgpu-wasm.js",
+    "wgpu-wasm.d.ts"
+  ],
+  "main": "wgpu-wasm.js",
+  "types": "wgpu-wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
