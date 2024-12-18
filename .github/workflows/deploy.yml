@@ -28,9 +28,15 @@ jobs:
           mkdir -p js
           rm -rf js/*
 
+      # 4. 列出 Artifacts 的文件
+      - name: List available artifacts
+        run: |
+          echo 'Available artifacts:'
+          ls $GITHUB_WORKSPACE
+
       # 4. 下载 WASM 文件
       - name: Download WASM Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: wasm-files
           path: ./js

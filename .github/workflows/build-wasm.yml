@@ -36,7 +36,7 @@ jobs:
 
     # 6. 上传到 artifacts
     - name: Upload WASM artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: wasm-files
         path: ./pkg
