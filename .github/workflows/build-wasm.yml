@@ -87,6 +87,14 @@ jobs:
           echo "All files:"
           ls
 
+      # 7. 删除多余文件和文件夹
+      - name: Remove unnecessary files
+        run: |
+          rm -rf ./Cargo.toml
+          rm -rf ./src
+          rm -rf ./.github
+          rm -rf ./.gitignore
+
       # 7. 提交到 gh-pages
       - name: Commit and Push changes
         env:
