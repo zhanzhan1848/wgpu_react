@@ -1,12 +1,12 @@
-name: Deploy to Github Pages
-
-on:
-  workflow_run:
-    workflows: ["Build WGPU To WASM"]
-    types:
-      - completed
-
-jobs:
+#name: Deploy to Github Pages
+#
+#on:
+#  workflow_run:
+#    workflows: ["Build WGPU To WASM"]
+#    types:
+#      - completed
+#
+#jobs:
 #  deploy:
 #    runs-on: ubuntu-latest
 #
