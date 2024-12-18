@@ -79,7 +79,7 @@ jobs:
       # 6. 提交到 gh-pages
       - name: Commit and Push changes
         env:
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add js
           git commit -m "Update WASM files"
