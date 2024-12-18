@@ -76,11 +76,18 @@ jobs:
           name: wasm-files
           path: ./js
 
-      # 6. 提交到 gh-pages
+      # 6. 打印文件列表
+      - name: Display artifact files
+        run: |
+          echo "Artifact files:"
+          ls ./js
+
+      # 7. 提交到 gh-pages
       - name: Commit and Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git pull origin gh-pages
           git add js
-          git commit -m "Update WASM files"
-          git push origin gh-pages --force
+          git commit -m "Update WASM files" || echo "No changes to commit"
+          git push origin gh-pages
