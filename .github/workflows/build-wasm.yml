@@ -94,8 +94,9 @@ jobs:
           rm -rf ./src
           rm -rf ./.github
           rm -rf ./.gitignore
+          ls
 
-      # 7. 提交到 gh-pages
+      # 8. 提交到 gh-pages
       - name: Commit and Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
