@@ -56,6 +56,7 @@ jobs:
           git config user.name "Github Actions"
           git config user.email "actions@github.com"
           git checkout gh-pages || git checkout --orphan gh-pages
+          git pull origin gh-pages
 
       # 3. 清理旧文件夹
       - name: Remove old files
@@ -87,7 +88,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git pull origin gh-pages
           git add js
           git commit -m "Update WASM files" || echo "No changes to commit"
           git push origin gh-pages
