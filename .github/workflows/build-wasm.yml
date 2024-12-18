@@ -31,7 +31,7 @@ jobs:
       run: cargo install wasm-pack
 
     # 5. 构建 Rust 项目为 WASM
-    - name: Build with wasm-pack
+    - name: Build WASM with wasm-pack
       run: wasm-pack build --target web --out-dir ./pkg --out-name wgpu-wasm
 
     # 6. 上传到 artifacts
@@ -39,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: wasm-files
-        path: pkg
+        path: ./pkg
