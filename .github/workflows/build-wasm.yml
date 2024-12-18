@@ -1,4 +1,4 @@
-name: Build WGPU To WASM
+name: Build RenderEngine To WASM
 
 on:
   push:

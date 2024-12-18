@@ -2,7 +2,7 @@
 #
 #on:
 #  workflow_run:
-#    workflows: ["Build WGPU To WASM"]
+#    workflows: ["Build RenderEngine To WASM"]
 #    types:
 #      - completed
 #

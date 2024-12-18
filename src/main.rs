@@ -1,4 +1,4 @@
-use WGPU::run;
+use render_engine::run;
 
 fn main() {
     pollster::block_on(run());
